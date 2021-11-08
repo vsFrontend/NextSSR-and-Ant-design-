@@ -2,6 +2,7 @@ import { useRouter } from "next/router";
 import ContainerDashBoard from "~/components/layouts/ContainerDashboard";
 import { Avatar, Card, Spin } from "antd";
 import Meta from "antd/lib/card/Meta";
+import styles from './todo.module.css' 
 
 function index({ data = {} }) {
   const router = useRouter();
@@ -11,7 +12,7 @@ function index({ data = {} }) {
       <h2>TODO's Page</h2>
       <div>
         {router.isFallback && <Spin />}
-        <Card style={{ width: 300, marginTop: 16 }} loading={router.isFallback}>
+        <Card className={styles.cardContainer} loading={router.isFallback}>
           <Meta
             avatar={<Avatar src="https://joeschmoe.io/api/v1/random" />}
             title="TODO"

@@ -9,7 +9,7 @@ import {
 } from "@ant-design/icons";
 import { useRouter } from "next/router";
 
-import "./layout.module.css";
+import styles from "./layout.module.css";
 import Logo from "../elements/common/Logo";
 import useCollapseDrawer from "~/hooks/useCollapseDrawer";
 const { Header, Sider, Content } = Layout;
@@ -28,21 +28,16 @@ const ContainerDashBoard = ({ view, children, title, ...props }) => {
       <Head>
         <title>{title || siteName + " | " + process.env.title}</title>
       </Head>
-      <Layout className="dashboard-layout">
+      <Layout className={styles.dashboardLayout}>
         <Sider
           trigger={null}
-          onCollapse={(collapsed, type) => {
-            console.log(collapsed, type);
-          }}
           collapsible
           collapsed={isCollapse}
           collapsedWidth={0}
           width={280}
-          style={{
-            overflow: "auto",
-          }}
+          className={styles.sider}
         >
-          <div className="logo" style={{ margin: 5, marginLeft: 20 }}>
+          <div className={styles.logo}>
             <Logo />
           </div>
           <Menu
@@ -74,15 +69,9 @@ const ContainerDashBoard = ({ view, children, title, ...props }) => {
         <Layout className="site-layout">
           <Header className="client-dashboard__header">
             {isCollapse ? (
-              <MenuUnfoldOutlined
-                style={{ color: "white" }}
-                onClick={handleToggleCollapse}
-              />
+              <MenuUnfoldOutlined className={styles.collapseIcon} onClick={handleToggleCollapse} />
             ) : (
-              <MenuFoldOutlined
-                style={{ color: "white" }}
-                onClick={handleToggleCollapse}
-              />
+              <MenuFoldOutlined className={styles.collapseIcon} onClick={handleToggleCollapse} />
             )}
           </Header>
           <Content className="site-layout-background">

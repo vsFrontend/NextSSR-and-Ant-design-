@@ -22,7 +22,6 @@ const columns = [
     title: "Status",
     dataIndex: "completed",
     render: (tags, record) => {
-      console.log("record", record);
       return (
         <>
           {record.completed ? (

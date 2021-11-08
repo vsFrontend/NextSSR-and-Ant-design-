@@ -1,0 +1,42 @@
+html {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  font-size: 16px;
+  zoom: 90%;
+}
+
+body {
+  margin: 0;
+}
+
+#__next {
+  height: 100%;
+  width: 100%;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.dashboard-layout {
+  height: 100%;
+}
+#mainContent {
+  padding: 30px;
+  height: 100%;
+  overflow: auto;
+}
+
+.ps-section__content {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.img-404 {
+  width: 50vw;
+}

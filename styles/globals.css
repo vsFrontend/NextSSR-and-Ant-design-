@@ -6,6 +6,7 @@ html {
   zoom: 90%;
 
   --white: #ffffff;
+  --primary: #1890ff;
 }
 
 body {
@@ -38,4 +39,40 @@ a {
 }
 .img-404 {
   width: 50vw;
+}
+
+.loading-container {
+  background: rgb(255, 255, 255);
+  z-index: 100;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+}
+
+/*  */
+#nprogress {
+  pointer-events: "none";
+}
+#nprogress .peg {
+  right: 0;
+  opacity: 1;
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  transform: rotate(3deg) translate(0px, -4px);
+  box-shadow: 0 0 10px var(--primary) 0 0 5px var(--primary);
+}
+#nprogress .bar {
+  top: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  position: fixed;
+  z-index: 500;
+  background-color: var(--primary);
+  box-shadow: 0 0 2px var(--primary);
 }

@@ -16,7 +16,7 @@ function CollapseDrawerProvider({ children }) {
   const { width } = useWindowSize();
   const isMobile = width <= 760;
 
-  const [collapse, setCollapse] = useState(false);
+  const [collapse, setCollapse] = useState(!isMobile);
 
   useEffect(() => {
     if (isMobile) {
